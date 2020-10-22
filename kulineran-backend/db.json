@@ -1,0 +1,96 @@
+{
+  "best-products": [
+    {
+      "id": 1,
+      "kode": "K-01",
+      "nama": "Big Burger",
+      "harga": "30000",
+      "is_ready": true,
+      "gambar": "burger.jpg"
+    },
+    {
+      "id": 2,
+      "kode": "K-02",
+      "nama": "Italian Pizza",
+      "harga": "90000",
+      "is_ready": true,
+      "gambar": "pizza.jpg"
+    },
+    {
+      "id": 3,
+      "kode": "K-03",
+      "nama": "Nasi Goreng Special",
+      "harga": "25000",
+      "is_ready": true,
+      "gambar": "fried-rice.jpg"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "kode": "K-01",
+      "nama": "Big Burger",
+      "harga": "30000",
+      "is_ready": true,
+      "gambar": "burger.jpg"
+    },
+    {
+      "id": 2,
+      "kode": "K-02",
+      "nama": "Italian Pizza",
+      "harga": "90000",
+      "is_ready": true,
+      "gambar": "pizza.jpg"
+    },
+    {
+      "id": 3,
+      "kode": "K-03",
+      "nama": "Nasi Goreng Special",
+      "harga": "25000",
+      "is_ready": true,
+      "gambar": "fried-rice.jpg"
+    },
+    {
+      "id": 4,
+      "kode": "K-04",
+      "nama": "Big French Fries",
+      "harga": "20000",
+      "is_ready": true,
+      "gambar": "french-fries.jpg"
+    },
+    {
+      "id": 5,
+      "kode": "K-05",
+      "nama": "Hot Fried Chicken",
+      "harga": "35000",
+      "is_ready": true,
+      "gambar": "fried-chicken.jpg"
+    },
+    {
+      "id": 6,
+      "kode": "K-016",
+      "nama": "Sosis Lada Hitam",
+      "harga": "15000",
+      "is_ready": true,
+      "gambar": "sausage.jpg"
+    },
+    {
+      "id": 7,
+      "kode": "K-07",
+      "nama": "Bolognese Spagetti",
+      "harga": "45000",
+      "is_ready": true,
+      "gambar": "spagetti.jpg"
+    },
+    {
+      "id": 8,
+      "kode": "K-08",
+      "nama": "BBQ Steak",
+      "harga": "90000",
+      "is_ready": true,
+      "gambar": "steak.jpg"
+    }
+  ],
+  "keranjangs": [],
+  "pesanans": []
+}

@@ -1,24 +1,44 @@
-# kulineran
+# kulineran - Latihan Vue JS 1
 
-## Project setup
+## Backend setup
+
+Install JSON Server
+
+```
+npm install -g json-server
+```
+
+Pindah ke folder "kulineran-backend" <br />
+Jalankan Perintah berikut
+
+```bash
+json-server --watch db.json
+```
+
+## Project setup Front-end
+
 ```
 npm install
 ```
 
 ### Compiles and hot-reloads for development
+
 ```
 npm run serve
 ```
 
 ### Compiles and minifies for production
+
 ```
 npm run build
 ```
 
 ### Lints and fixes files
+
 ```
 npm run lint
 ```
 
 ### Customize configuration
+
 See [Configuration Reference](https://cli.vuejs.org/config/).
