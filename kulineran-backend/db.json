@@ -89,6 +89,46 @@
       "harga": "90000",
       "is_ready": true,
       "gambar": "steak.jpg"
+    },
+    {
+      "id": 9,
+      "kode": "K-09",
+      "nama": "Black Burger",
+      "harga": "60000",
+      "is_ready": true,
+      "gambar": "black-burger.jpg"
+    },
+    {
+      "id": 10,
+      "kode": "K-10",
+      "nama": "Carbonara Spagetti",
+      "harga": "75000",
+      "is_ready": true,
+      "gambar": "carbonara-spagetti.jpg"
+    },
+    {
+      "id": 11,
+      "kode": "K-11",
+      "nama": "Cheeseburger",
+      "harga": "55000",
+      "is_ready": true,
+      "gambar": "cheeseburger.jpg"
+    },
+    {
+      "id": 12,
+      "kode": "K-12",
+      "nama": "Chicago Pizza",
+      "harga": "100000",
+      "is_ready": true,
+      "gambar": "chicago-pizza.jpg"
+    },
+    {
+      "id": 13,
+      "kode": "K-13",
+      "nama": "Pepperoni Pizza",
+      "harga": "90000",
+      "is_ready": true,
+      "gambar": "pepperoni-pizza.jpg"
     }
   ],
   "keranjangs": [],

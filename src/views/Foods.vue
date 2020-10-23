@@ -27,6 +27,28 @@
         </div>
       </div>
 
+      <div class="row mt-3">
+        <form class="mt-4" v-on:submit.prevent>
+          <div class="form-group">
+            <label for="hargaMin">Harga Minimum: </label>
+            <input type="number" class="form-control" v-model="hargaMin" />
+          </div>
+
+          <div class="form-group">
+            <label for="hargaMax">Harga Maksimal: </label>
+            <input type="number" class="form-control" v-model="hargaMax" />
+          </div>
+
+          <button
+            type="submit"
+            class="btn btn-success w-100"
+            @click="filterHarga"
+          >
+            Terapkan
+          </button>
+        </form>
+      </div>
+
       <div class="row mb-3">
         <div
           class="col-md-4 mt-4"
@@ -54,6 +76,8 @@ export default {
     return {
       products: [],
       search: "",
+      hargaMax: 0,
+      hargaMin: 0,
     };
   },
   methods: {
@@ -65,6 +89,67 @@ export default {
         .get("http://localhost:3000/products?q=" + this.search)
         .then((response) => this.setProducts(response.data))
         .catch((error) => console.error(error));
+    },
+    async filterHarga() {
+      const hargaMin = this.hargaMin;
+      const hargaMax = this.hargaMax;
+
+      const productFilter = await axios
+        .get("http://localhost:3000/products")
+        .then((response) => {
+          const products = response.data;
+          if (hargaMin !== 0 && hargaMax !== 0) {
+            return products.filter((product) => {
+              if (
+                hargaMin < Number(product.harga) ||
+                hargaMax > Number(product.harga)
+              ) {
+                this.$toast.error("Produk tidak ditemukan", {
+                  type: "error",
+                  position: "top-right",
+                  duration: 2000,
+                  dismissible: true,
+                });
+              }
+
+              return (
+                Number(product.harga) >= hargaMin &&
+                Number(product.harga) <= hargaMax
+              );
+            });
+          } else if (hargaMin !== 0) {
+            return products.filter((product) => {
+              if (hargaMin < Number(product.harga)) {
+                this.$toast.error("Produk tidak ditemukan", {
+                  type: "error",
+                  position: "top-right",
+                  duration: 2000,
+                  dismissible: true,
+                });
+              }
+
+              return Number(product.harga) >= hargaMin;
+            });
+          } else if (hargaMax !== 0) {
+            return products.filter((product) => {
+              if (hargaMax > Number(product.harga)) {
+                this.$toast.error("Produk tidak ditemukan", {
+                  type: "error",
+                  position: "top-right",
+                  duration: 2000,
+                  dismissible: true,
+                });
+              }
+
+              return Number(product.harga) <= hargaMax;
+            });
+          } else {
+            return this.setProducts(response.data);
+          }
+        })
+        .catch((error) => console.error(error));
+
+      return this.setProducts(productFilter);
     },
   },
   mounted() {
