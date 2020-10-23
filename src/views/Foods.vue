@@ -100,18 +100,6 @@ export default {
           const products = response.data;
           if (hargaMin !== 0 && hargaMax !== 0) {
             return products.filter((product) => {
-              if (
-                hargaMin < Number(product.harga) ||
-                hargaMax > Number(product.harga)
-              ) {
-                this.$toast.error("Produk tidak ditemukan", {
-                  type: "error",
-                  position: "top-right",
-                  duration: 2000,
-                  dismissible: true,
-                });
-              }
-
               return (
                 Number(product.harga) >= hargaMin &&
                 Number(product.harga) <= hargaMax
@@ -119,28 +107,10 @@ export default {
             });
           } else if (hargaMin !== 0) {
             return products.filter((product) => {
-              if (hargaMin < Number(product.harga)) {
-                this.$toast.error("Produk tidak ditemukan", {
-                  type: "error",
-                  position: "top-right",
-                  duration: 2000,
-                  dismissible: true,
-                });
-              }
-
               return Number(product.harga) >= hargaMin;
             });
           } else if (hargaMax !== 0) {
             return products.filter((product) => {
-              if (hargaMax > Number(product.harga)) {
-                this.$toast.error("Produk tidak ditemukan", {
-                  type: "error",
-                  position: "top-right",
-                  duration: 2000,
-                  dismissible: true,
-                });
-              }
-
               return Number(product.harga) <= hargaMax;
             });
           } else {
