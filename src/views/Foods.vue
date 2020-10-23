@@ -82,6 +82,21 @@ export default {
   },
   methods: {
     setProducts(data) {
+      if (data === undefined || data.length == 0) {
+        const getData = axios
+          .get("http://localhost:3000/products?q=" + this.search)
+          .then((response) => this.setProducts(response.data))
+          .catch((error) => console.error(error));
+
+        this.$toast.error("INVALID_INPUT", {
+          type: "error",
+          position: "top-right",
+          duration: 2000,
+          dismissible: true,
+        });
+        this.products = getData;
+      }
+
       this.products = data;
     },
     searchFood() {
@@ -118,7 +133,6 @@ export default {
           }
         })
         .catch((error) => console.error(error));
-
       return this.setProducts(productFilter);
     },
   },
