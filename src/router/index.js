@@ -1,5 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
+import Landing from "../views/Landing.vue";
+import Register from "../views/Register.vue";
 import Home from "../views/Home.vue";
 import Foods from "../views/Foods.vue";
 import FoodDetail from "../views/FoodDetail.vue";
@@ -11,6 +13,16 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: "/",
+    name: "Landing",
+    component: Landing,
+  },
+  {
+    path: "/register",
+    name: "Register",
+    component: Register,
+  },
+  {
+    path: "/home",
     name: "Home",
     component: Home,
   },

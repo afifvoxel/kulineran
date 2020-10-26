@@ -1,4 +1,20 @@
 {
+  "users": [
+    {
+      "nama": "Afif",
+      "email": "fauzi@email.com",
+      "password": "123123",
+      "konfirmasi_password": "123123",
+      "id": 1
+    },
+    {
+      "nama": "Fauzi",
+      "email": "afif@email.com",
+      "password": "123123",
+      "konfirmasi_password": "123123",
+      "id": 2
+    }
+  ],
   "best-products": [
     {
       "id": 1,

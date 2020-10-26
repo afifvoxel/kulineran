@@ -2,7 +2,7 @@
   <div>
     <b-navbar toggleable="lg" type="light">
       <div class="container">
-        <router-link to="/">
+        <router-link to="/home">
           <b-navbar-brand>Kulineran</b-navbar-brand>
         </router-link>
 
@@ -12,7 +12,7 @@
           <b-navbar-nav>
             <ul class="navbar-nav mr-auto">
               <li class="nav-item">
-                <router-link class="nav-link" to="/">Home</router-link>
+                <router-link class="nav-link" to="/home">Home</router-link>
               </li>
               <li class="nav-item">
                 <router-link class="nav-link" to="/foods">Foods</router-link>
@@ -36,6 +36,11 @@
                   </span>
                 </router-link>
               </li>
+              <li class="nav-item">
+                <button @click="logoutHandle" class="btn btn-outline-danger">
+                  Log Out
+                </button>
+              </li>
             </ul>
           </b-navbar-nav>
         </b-collapse>
@@ -58,6 +63,10 @@ export default {
   methods: {
     setJumlah(data) {
       this.jumlah_pesanans = data;
+    },
+    logoutHandle() {
+      this.$router.push({ path: "/" });
+      window.localStorage.clear();
     },
   },
   mounted() {
