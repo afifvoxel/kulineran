@@ -24,3 +24,8 @@
 .img-fluid {
   border-radius: 1rem;
 }
+
+.main-container {
+  width: 90vw;
+  margin: auto;
+}

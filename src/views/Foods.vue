@@ -1,37 +1,10 @@
 <template>
   <div>
     <Navbar />
-    <div class="container">
-      <div class="row mt-4">
-        <div class="col">
-          <h1>Daftar <strong>Makanan</strong></h1>
-        </div>
-      </div>
-
-      <div class="row mt-3">
-        <div class="col">
-          <div class="input-group mb-3">
-            <input
-              v-model="search"
-              type="text"
-              class="form-control"
-              placeholder="Cari makanan kesukaan Anda..."
-              aria-label="Cari"
-              aria-describedby="basic-addon1"
-              @keyup="searchFood"
-            />
-            <div class="input-group-prepend">
-              <span class="input-group-text" id="basic-addon1">
-                <b-icon-search></b-icon-search>
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="row mt-3">
-        <div class="col">
-          <h3>Filter Harga</h3>
+    <div class="row mt-5 main-container">
+      <div class="col-md-3">
+        <div class="col mt-4 mb-4">
+          <h4>Filter Harga</h4>
           <form class="mt-4" v-on:submit.prevent>
             <div class="form-group">
               <label for="hargaMin">Harga Minimum: </label>
@@ -52,8 +25,8 @@
             </button>
           </form>
         </div>
-        <div class="col">
-          <h3>Filter Jenis Makanan</h3>
+        <div class="col mt-4">
+          <h4>Filter Jenis Makanan</h4>
           <form class="mt-4" v-on:submit.prevent>
             <div class="checkbox">
               <label>
@@ -106,13 +79,42 @@
         </div>
       </div>
 
-      <div class="row mt-5 mb-3">
-        <div
-          class="col-md-4 mt-4"
-          v-for="product in products"
-          :key="product.id"
-        >
-          <CardProduct :product="product" />
+      <div class="col">
+        <div class="row mt-4">
+          <div class="col">
+            <h1>Daftar <strong>Makanan</strong></h1>
+          </div>
+        </div>
+
+        <div class="row mt-3">
+          <div class="col">
+            <div class="input-group mb-3">
+              <input
+                v-model="search"
+                type="text"
+                class="form-control"
+                placeholder="Cari makanan kesukaan Anda..."
+                aria-label="Cari"
+                aria-describedby="basic-addon1"
+                @keyup="searchFood"
+              />
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">
+                  <b-icon-search></b-icon-search>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mt-5 mb-3">
+          <div
+            class="col-md-4 mt-4"
+            v-for="product in products"
+            :key="product.id"
+          >
+            <CardProduct :product="product" />
+          </div>
         </div>
       </div>
     </div>
@@ -156,6 +158,8 @@ export default {
       }
 
       this.products = data;
+      this.hargaMin = 0;
+      this.hargaMax = 0;
     },
     searchFood() {
       axios
