@@ -1,6 +1,6 @@
 <template>
   <div class="keranjang">
-    <Navbar v-bind:updateKeranjangs="keranjangs" />
+    <Navbar :updateKeranjangs="keranjangs" />
     <div class="container">
       <div class="row mt-5">
         <div class="col">

@@ -6,6 +6,7 @@
       "nama": "Big Burger",
       "harga": "30000",
       "is_ready": true,
+      "kategori_makanan": "burger",
       "gambar": "burger.jpg"
     },
     {
@@ -14,6 +15,7 @@
       "nama": "Italian Pizza",
       "harga": "90000",
       "is_ready": true,
+      "kategori_makanan": "pizza",
       "gambar": "pizza.jpg"
     },
     {
@@ -22,6 +24,7 @@
       "nama": "Nasi Goreng Special",
       "harga": "25000",
       "is_ready": true,
+      "kategori_makanan": "lainnya",
       "gambar": "fried-rice.jpg"
     }
   ],
@@ -32,6 +35,7 @@
       "nama": "Big Burger",
       "harga": "30000",
       "is_ready": true,
+      "kategori_makanan": "burger",
       "gambar": "burger.jpg"
     },
     {
@@ -40,6 +44,7 @@
       "nama": "Italian Pizza",
       "harga": "90000",
       "is_ready": true,
+      "kategori_makanan": "pizza",
       "gambar": "pizza.jpg"
     },
     {
@@ -48,6 +53,7 @@
       "nama": "Nasi Goreng Special",
       "harga": "25000",
       "is_ready": true,
+      "kategori_makanan": "lainnya",
       "gambar": "fried-rice.jpg"
     },
     {
@@ -56,6 +62,7 @@
       "nama": "Big French Fries",
       "harga": "20000",
       "is_ready": true,
+      "kategori_makanan": "lainnya",
       "gambar": "french-fries.jpg"
     },
     {
@@ -64,6 +71,7 @@
       "nama": "Hot Fried Chicken",
       "harga": "35000",
       "is_ready": true,
+      "kategori_makanan": "lainnya",
       "gambar": "fried-chicken.jpg"
     },
     {
@@ -72,6 +80,7 @@
       "nama": "Sosis Lada Hitam",
       "harga": "15000",
       "is_ready": true,
+      "kategori_makanan": "lainnya",
       "gambar": "sausage.jpg"
     },
     {
@@ -80,6 +89,7 @@
       "nama": "Bolognese Spagetti",
       "harga": "45000",
       "is_ready": true,
+      "kategori_makanan": "spagetti",
       "gambar": "spagetti.jpg"
     },
     {
@@ -88,6 +98,7 @@
       "nama": "BBQ Steak",
       "harga": "90000",
       "is_ready": true,
+      "kategori_makanan": "lainnya",
       "gambar": "steak.jpg"
     },
     {
@@ -96,6 +107,7 @@
       "nama": "Black Burger",
       "harga": "60000",
       "is_ready": true,
+      "kategori_makanan": "burger",
       "gambar": "black-burger.jpg"
     },
     {
@@ -104,6 +116,7 @@
       "nama": "Carbonara Spagetti",
       "harga": "75000",
       "is_ready": true,
+      "kategori_makanan": "spagetti",
       "gambar": "carbonara-spagetti.jpg"
     },
     {
@@ -112,6 +125,7 @@
       "nama": "Cheeseburger",
       "harga": "55000",
       "is_ready": true,
+      "kategori_makanan": "burger",
       "gambar": "cheeseburger.jpg"
     },
     {
@@ -120,6 +134,7 @@
       "nama": "Chicago Pizza",
       "harga": "100000",
       "is_ready": true,
+      "kategori_makanan": "pizza",
       "gambar": "chicago-pizza.jpg"
     },
     {
@@ -128,6 +143,7 @@
       "nama": "Pepperoni Pizza",
       "harga": "90000",
       "is_ready": true,
+      "kategori_makanan": "pizza",
       "gambar": "pepperoni-pizza.jpg"
     }
   ],

@@ -9,47 +9,104 @@
       </div>
 
       <div class="row mt-3">
-        <div class="input-group mb-3">
-          <input
-            v-model="search"
-            type="text"
-            class="form-control"
-            placeholder="Cari makanan kesukaan Anda..."
-            aria-label="Cari"
-            aria-describedby="basic-addon1"
-            @keyup="searchFood"
-          />
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1">
-              <b-icon-search></b-icon-search>
-            </span>
+        <div class="col">
+          <div class="input-group mb-3">
+            <input
+              v-model="search"
+              type="text"
+              class="form-control"
+              placeholder="Cari makanan kesukaan Anda..."
+              aria-label="Cari"
+              aria-describedby="basic-addon1"
+              @keyup="searchFood"
+            />
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">
+                <b-icon-search></b-icon-search>
+              </span>
+            </div>
           </div>
         </div>
       </div>
 
       <div class="row mt-3">
-        <form class="mt-4" v-on:submit.prevent>
-          <div class="form-group">
-            <label for="hargaMin">Harga Minimum: </label>
-            <input type="number" class="form-control" v-model="hargaMin" />
-          </div>
+        <div class="col">
+          <h3>Filter Harga</h3>
+          <form class="mt-4" v-on:submit.prevent>
+            <div class="form-group">
+              <label for="hargaMin">Harga Minimum: </label>
+              <input type="number" class="form-control" v-model="hargaMin" />
+            </div>
 
-          <div class="form-group">
-            <label for="hargaMax">Harga Maksimal: </label>
-            <input type="number" class="form-control" v-model="hargaMax" />
-          </div>
+            <div class="form-group">
+              <label for="hargaMax">Harga Maksimal: </label>
+              <input type="number" class="form-control" v-model="hargaMax" />
+            </div>
 
-          <button
-            type="submit"
-            class="btn btn-success w-100"
-            @click="filterHarga"
-          >
-            Terapkan
-          </button>
-        </form>
+            <button
+              type="submit"
+              class="btn btn-success w-100"
+              @click="filterHarga"
+            >
+              Terapkan
+            </button>
+          </form>
+        </div>
+        <div class="col">
+          <h3>Filter Jenis Makanan</h3>
+          <form class="mt-4" v-on:submit.prevent>
+            <div class="checkbox">
+              <label>
+                <input
+                  type="checkbox"
+                  value="burger"
+                  v-model="kategoriMakanan"
+                />
+                Burger</label
+              >
+            </div>
+            <div class="checkbox">
+              <label>
+                <input
+                  type="checkbox"
+                  value="pizza"
+                  v-model="kategoriMakanan"
+                />
+                Pizza
+              </label>
+            </div>
+            <div class="checkbox">
+              <label>
+                <input
+                  type="checkbox"
+                  value="spagetti"
+                  v-model="kategoriMakanan"
+                />
+                Spagetti
+              </label>
+            </div>
+            <div class="checkbox">
+              <label>
+                <input
+                  type="checkbox"
+                  value="lainnya"
+                  v-model="kategoriMakanan"
+                />
+                Lainnya
+              </label>
+            </div>
+            <button
+              type="submit"
+              class="btn btn-success w-100"
+              @click="filterKategoriMakanan"
+            >
+              Terapkan
+            </button>
+          </form>
+        </div>
       </div>
 
-      <div class="row mb-3">
+      <div class="row mt-5 mb-3">
         <div
           class="col-md-4 mt-4"
           v-for="product in products"
@@ -78,6 +135,7 @@ export default {
       search: "",
       hargaMax: 0,
       hargaMin: 0,
+      kategoriMakanan: [],
     };
   },
   methods: {
@@ -133,6 +191,25 @@ export default {
           }
         })
         .catch((error) => console.error(error));
+      return this.setProducts(productFilter);
+    },
+    async filterKategoriMakanan() {
+      const productFilter = await axios
+        .get("http://localhost:3000/products")
+        .then((response) => {
+          const filterMakanan = this.kategoriMakanan;
+          const products = response.data;
+
+          const filterResult = filterMakanan.map((value) => {
+            return products.filter(
+              (product) => product.kategori_makanan === value
+            );
+          });
+
+          return [].concat(...filterResult);
+        })
+        .catch((error) => console.error(error));
+
       return this.setProducts(productFilter);
     },
   },
